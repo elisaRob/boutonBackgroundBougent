@@ -1,0 +1,92 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+body{
+    height:100vh;
+    background-color:#403f3f;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+a{
+    text-decoration:none;
+    color:white;
+    border:3px solid white;
+    font-size:40px;
+    padding:40px 80px;
+    font-family: sans-serif;
+    position:relative;
+    overflow:hidden;
+    transition:all 0.3s;
+}
+
+a:before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    height:100%;
+    width:130px;
+    background-color:rgb(224, 136, 206);
+    z-index:-1;
+    transform:skew(-15deg);
+    animation-name:bouger;
+    animation-duration:3s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+    transition:all 0.3s;
+}
+
+a:after{
+    content:"";
+    position:absolute;
+    top:0;
+    right:0;
+    height:100%;
+    width:130px;
+    background-color:rgb(224, 136, 206);
+    z-index:-1;
+    transform:skew(15deg);
+    animation-name:bouger2;
+    animation-duration:3s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+a:hover:before{
+    width:100%;
+    animation:none;
+    transform:skew(0);
+}
+
+a:hover{
+    font-weight:bold;
+    color:black;
+    border:3px solid black;
+}
+
+
+@keyframes bouger{
+    from{
+        left:-50%;
+    }
+
+    to{
+        left:100%;
+    }
+}
+
+@keyframes bouger2{
+    from{
+        right:-50%;
+    }
+
+    to{
+        right:100%;
+    }
+}
